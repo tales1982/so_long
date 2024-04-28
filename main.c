@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 		ft_putstr("Após swap..push_B\n");
 		ft_putstr("Original..Stack_B\n");
 		push_b(&a, &b);
+		push_b(&a, &b);
 		peek(&b);
 		ft_putstr("\n");
 

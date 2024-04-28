@@ -26,7 +26,6 @@ void			ft_putstr(char *str);
 void			ft_putchar(char c);
 void			ft_putnbr(int n);
 void			peek(Stack *s);
-int				pop(Stack *s);
 void			initStack(Stack *s);
 void			push(Stack *s, int data);
 void			push_b(Stack *a, Stack *b);
