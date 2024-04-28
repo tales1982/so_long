@@ -3,8 +3,8 @@
 # define PUSH_SWAP_H
 
 //******************* LIBRARIES ********************
-# include <unistd.h>
 # include <stdlib.h>
+# include <unistd.h>
 //************* struct *******************
 typedef struct Node
 {
@@ -19,11 +19,12 @@ typedef struct
 
 //******** FUNCTION DECLARATIONS ***********
 int				main(int argc, char **argv);
-void			ft_swap_a(Stack *a);
+void			ft_swap_two_first_elements(Stack *s);
+void			ft_swap_two_elements_stacks_a_b(Stack *a, Stack *b);
 void			ft_putstr(char *str);
 void			ft_putchar(char c);
 void			ft_putnbr(int n);
-void				peek(Stack *s);
+void			peek(Stack *s);
 int				pop(Stack *s);
 void			initStack(Stack *s);
 void			push(Stack *s, int data);

@@ -9,7 +9,6 @@ void	peek(Stack *a)
 		ft_putstr("Stack is empty!\n");
 	else
 	{
-		ft_putstr("Stack elements are:\n");
 		while (current != NULL)
 		{
 			ft_putnbr(current->data);

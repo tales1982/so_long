@@ -5,7 +5,7 @@ SRC        = main.c \
 			 operations/ft_peek.c \
 			 operations/ft_stack_pop.c \
 			 operations/ft_stack_push.c \
-			 operations/ft_swap_a.c 
+			 operations/ft_swap.c 
 
 OBJS       = $(SRC:.c=.o)
 
