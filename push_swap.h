@@ -23,7 +23,7 @@ void			ft_swap(int *num_a, int *num_b);
 void			ft_putstr(char *str);
 void			ft_putchar(char c);
 void			ft_putnbr(int n);
-int				peek(Stack *s);
+void				peek(Stack *s);
 int				pop(Stack *s);
 void			initStack(Stack *s);
 void			push(Stack *s, int data);

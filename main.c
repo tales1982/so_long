@@ -8,15 +8,14 @@ int	main(int argc, char **argv)
 	if (argc > 0)
 	{
 		initStack(&s);
-		push(&s, 10);
 		push(&s, 20);
+		push(&s, 40);
 		push(&s, 30);
-		ft_putstr("\nItem popped..: ");
-		ft_putnbr(pop(&s));
-		ft_putstr("\nTop item..: ");
-		ft_putnbr(pop(&s));
+		push(&s, 10);
+		push(&s, 60);
+		push(&s, 50);
 		ft_putstr("\n");
-		ft_putstr("\n");
+		  peek(&s);
 		ft_putstr(argv[0]);
 		return (0);
 	}
