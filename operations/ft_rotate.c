@@ -1,6 +1,7 @@
 
 #include "../push_swap.h"
 
+//rotate --> rr depois seleciona a pilha
 void    rotate(Stack *s)
 {
     if (s->top == NULL || s->top->next == NULL) {

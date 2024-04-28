@@ -19,12 +19,23 @@ int	main(int argc, char **argv)
 			push(&a, value);
 			i++;
 		}
-		ft_putstr("Stack antes da rotação:\n");
+		ft_putstr("Stack_A antes da rotação:\n");
 		peek(&a);
-		ft_putstr("\n");
 		rotate(&a);
-		ft_putstr("Stack após a rotação:\n");
+		ft_putstr("\nStack_A depois da rotação:\n");
 		peek(&a);
+		ft_putstr("==============================\n");
+		push_b(&a, &b);
+		push_b(&a, &b);
+		push_b(&a, &b);
+		push_b(&a, &b);
+		push_b(&a, &b);
+		push_b(&a, &b);
+		ft_putstr("Stack_B antes da rotação:\n");
+		peek(&b);
+		rotate(&b);
+		ft_putstr("\nStack_B depois da rotação:\n");
+		peek(&b);
 		ft_putstr("\n");
 		return (0);
 	}
