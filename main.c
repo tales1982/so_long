@@ -19,42 +19,13 @@ int	main(int argc, char **argv)
 			push(&a, value);
 			i++;
 		}
-		ft_putstr("Original..Stack_A\n");
+		ft_putstr("Stack antes da rotação:\n");
 		peek(&a);
 		ft_putstr("\n");
-
-		ft_putstr("Original..Stack_B\n");
-		peek(&b);
-		ft_putstr("\n");
-
-		ft_putstr("Após swap..push_B\n");
-		ft_putstr("Original..Stack_B\n");
-		push_b(&a, &b);
-		push_b(&a, &b);
-		peek(&b);
-		ft_putstr("\n");
-
-		ft_putstr("Original..Stack_A\n");
+		rotate(&a);
+		ft_putstr("Stack após a rotação:\n");
 		peek(&a);
 		ft_putstr("\n");
-		
-		ft_putstr("Após swap..push_A\n");
-		ft_putstr("Original..Stack_A\n");
-		push_a(&b, &a);
-		peek(&a);
-		ft_putstr("\n");
-
-		ft_putstr("Original..Stack_B\n");
-		peek(&b);
-		ft_putstr("\n");
-		
-		/*result = pop(&b);
-		if (result != -1)
-		{
-			ft_putstr("Valor removido: ");
-			ft_putnbr(result);
-			ft_putstr("\n");
-		}*/
 		return (0);
 	}
 	return (1);

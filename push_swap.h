@@ -30,5 +30,6 @@ void			initStack(Stack *s);
 void			push(Stack *s, int data);
 void			push_b(Stack *a, Stack *b);
 void			push_a(Stack *b, Stack *a);
+void			rotate(Stack *s);
 
 #endif
