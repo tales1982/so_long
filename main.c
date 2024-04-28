@@ -19,24 +19,19 @@ int	main(int argc, char **argv)
 			push(&a, value);
 			i++;
 		}
-		ft_putstr("Stack_A antes da rotação:\n");
-		peek(&a);
-		rotate(&a);
-		ft_putstr("\nStack_A depois da rotação:\n");
-		peek(&a);
-		ft_putstr("==============================\n");
-		push_b(&a, &b);
-		push_b(&a, &b);
-		push_b(&a, &b);
-		push_b(&a, &b);
-		push_b(&a, &b);
-		push_b(&a, &b);
-		ft_putstr("Stack_B antes da rotação:\n");
-		peek(&b);
-		rotate(&b);
-		ft_putstr("\nStack_B depois da rotação:\n");
-		peek(&b);
-		ft_putstr("\n");
+		ft_putstr("Stack inicial:\n");
+    peek(&a);
+    ft_putstr("\n");
+
+    // Aplica reverse rotate
+    reverse_rotate(&a);
+	reverse_rotate(&a);
+	reverse_rotate(&a);
+
+    // Imprime estado da pilha após reverse rotate
+    ft_putstr("Stack após reverse rotate:\n");
+    peek(&a);
+    ft_putstr("\n");
 		return (0);
 	}
 	return (1);
