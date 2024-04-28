@@ -25,6 +25,8 @@ int	main(int argc, char **argv)
 		}*/
 		ft_putstr("\n");
 		peek(&a);
+		ft_swap_a(&a);
+		peek(&a);
 		ft_putstr(argv[0]);
 		return (0);
 	}
