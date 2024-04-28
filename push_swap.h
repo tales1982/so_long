@@ -21,6 +21,7 @@ typedef struct
 int				main(int argc, char **argv);
 void			ft_swap_two_first_elements(Stack *s);
 void			ft_swap_two_elements_stacks_a_b(Stack *a, Stack *b);
+int				ft_atoi(const char *str);
 void			ft_putstr(char *str);
 void			ft_putchar(char c);
 void			ft_putnbr(int n);

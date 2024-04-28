@@ -1,18 +1,19 @@
-NAME       = push_swap
-SRC        = main.c \
-             outils/ft_putstr.c \
-			 outils/ft_putnbr.c \
-			 operations/ft_peek.c \
-			 operations/ft_stack_pop.c \
-			 operations/ft_stack_push.c \
-			 operations/ft_swap.c 
+NAME		= push_swap
+SRC			= main.c \
+			outils/ft_atoi.c \
+			outils/ft_putstr.c \
+			outils/ft_putnbr.c \
+			operations/ft_peek.c \
+			operations/ft_stack_pop.c \
+			operations/ft_stack_push.c \
+			operations/ft_swap.c 
 
-OBJS       = $(SRC:.c=.o)
+OBJS		= $(SRC:.c=.o)
 
 # Compiler options
-CC         = cc
-RM         = rm -f
-CFLAGS     = -Wall -Wextra -Werror
+CC			= cc
+RM			= rm -f
+CFLAGS		= -Wall -Wextra -Werror
 
 # Implicit rule for compiling .c to .o
 %.o : %.c

@@ -15,7 +15,8 @@ void	push(Stack *a, int data)
 	newNode = (Node *)malloc(sizeof(Node));
 	if (newNode == NULL)
 	{
-		ft_putstr("Error \n");
+		return;
+		//ft_putstr("Error \n");
 	}
 	else
 	{
