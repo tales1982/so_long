@@ -29,5 +29,7 @@ void			peek(Stack *s);
 int				pop(Stack *s);
 void			initStack(Stack *s);
 void			push(Stack *s, int data);
+void			push_b(Stack *a, Stack *b);
+void			push_a(Stack *b, Stack *a);
 
 #endif

@@ -22,10 +22,31 @@ int	main(int argc, char **argv)
 		ft_putstr("Original..Stack_A\n");
 		peek(&a);
 		ft_putstr("\n");
-		ft_swap_two_first_elements(&a);
-		ft_putstr("Após swap..Stack_A\n");
+
+		ft_putstr("Original..Stack_B\n");
+		peek(&b);
+		ft_putstr("\n");
+
+		ft_putstr("Após swap..push_B\n");
+		ft_putstr("Original..Stack_B\n");
+		push_b(&a, &b);
+		peek(&b);
+		ft_putstr("\n");
+
+		ft_putstr("Original..Stack_A\n");
 		peek(&a);
 		ft_putstr("\n");
+		
+		ft_putstr("Após swap..push_A\n");
+		ft_putstr("Original..Stack_A\n");
+		push_a(&b, &a);
+		peek(&a);
+		ft_putstr("\n");
+
+		ft_putstr("Original..Stack_B\n");
+		peek(&b);
+		ft_putstr("\n");
+		
 		/*result = pop(&b);
 		if (result != -1)
 		{
