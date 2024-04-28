@@ -3,24 +3,22 @@
 
 int	main(int argc, char **argv)
 {
+	int	i;
+	int	value;
+
 	// int	result;
 	Stack a, b;
-	int i;
-	int value;
-
 	i = 1;
 	if (argc > 0)
 	{
-
 		initStack(&a);
 		initStack(&b);
-		while(i < argc)
+		while (i < argc)
 		{
 			value = ft_atoi(argv[i]);
 			push(&a, value);
 			i++;
 		}
-		
 		ft_putstr("Original..Stack_A\n");
 		peek(&a);
 		ft_putstr("\n");
