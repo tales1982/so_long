@@ -2,13 +2,13 @@
 #include "../push_swap.h"
 
 // inicializa a pilha
-void	initStack(Stack *s)
+void	initStack(Stack *a)
 {
-	s->top = NULL;
+	a->top = NULL;
 }
 
 // Adciona um elemento na pilha
-void	push(Stack *s, int data)
+void	push(Stack *a, int data)
 {
 	Node	*newNode;
 
@@ -20,7 +20,7 @@ void	push(Stack *s, int data)
 	else
 	{
 		newNode->data = data;
-		newNode->next = s->top;
-		s->top = newNode;
+		newNode->next = a->top;
+		a->top = newNode;
 	}
 }

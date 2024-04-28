@@ -2,9 +2,9 @@
 #include "../push_swap.h"
 
 // Mostra o elemento no top da pilha sem removelo.
-void	peek(Stack *s)
+void	peek(Stack *a)
 {
-	Node *current = s->top;
+	Node *current = a->top;
 	if (current == NULL)
 		ft_putstr("Stack is empty!\n");
 	else

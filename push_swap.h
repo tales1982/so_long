@@ -19,7 +19,7 @@ typedef struct
 
 //******** FUNCTION DECLARATIONS ***********
 int				main(int argc, char **argv);
-void			ft_swap(int *num_a, int *num_b);
+void			ft_swap(int *stack_a, int *stack_b);
 void			ft_putstr(char *str);
 void			ft_putchar(char c);
 void			ft_putnbr(int n);

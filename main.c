@@ -3,19 +3,28 @@
 
 int	main(int argc, char **argv)
 {
-	Stack	s;
+	int	result;
 
+	Stack stack_a, stack_b;
 	if (argc > 0)
 	{
-		initStack(&s);
-		push(&s, 20);
-		push(&s, 40);
-		push(&s, 30);
-		push(&s, 10);
-		push(&s, 60);
-		push(&s, 50);
+		initStack(&stack_a);
+		initStack(&stack_b);
+		push(&stack_a, 20);
+		push(&stack_a, 40);
+		push(&stack_a, 30);
+		push(&stack_a, 10);
+		push(&stack_a, 60);
+		push(&stack_a, 50);
+		result = pop(&stack_a);
+		if (result != -1)
+		{
+			ft_putstr("Valor removido: ");
+			ft_putnbr(result);
+			ft_putstr("\n");
+		}
 		ft_putstr("\n");
-		  peek(&s);
+		peek(&stack_a);
 		ft_putstr(argv[0]);
 		return (0);
 	}
