@@ -3,6 +3,7 @@
 
 void	reverse_rotate(Stack *s)
 {
+	//rra -->rrb -->rrr
 	Node	*last;
 	Node	*second_last;
 
