@@ -3,6 +3,8 @@ SRC			= main.c \
 			outils/ft_atoi.c \
 			outils/ft_putstr.c \
 			outils/ft_putnbr.c \
+			outils/stack_size.c \
+			outils/print_stack.c \
 			operations/ft_peek.c \
 			operations/ft_push.c \
 			operations/ft_swap.c \

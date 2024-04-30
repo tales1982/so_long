@@ -3,22 +3,20 @@
 # define PUSH_SWAP_H
 
 //******************* LIBRARIES ********************
+# include <stdio.h> //remover depois !!!!!!!!!!!!!!!!1
 # include <stdlib.h>
 # include <unistd.h>
-
-# include <stdio.h>//remover depois !!!!!!!!!!!!!!!!1
 //************* struct *******************
-typedef struct Node
+typedef struct node
 {
 	int			data;
-	struct Node	*next;
+	struct node	*next;
 }				Node;
 
 typedef struct
 {
 	Node		*top;
 }				Stack;
-
 
 int				main(int argc, char **argv);
 void			ft_swap_two_first_elements(Stack *s);
@@ -27,6 +25,7 @@ int				ft_atoi(const char *str);
 void			ft_putstr(char *str);
 void			ft_putchar(char c);
 void			ft_putnbr(int n);
+int				stack_size(Stack *s);
 void			peek(Stack *s);
 void			initStack(Stack *s);
 void			push(Stack *s, int data);
@@ -34,10 +33,7 @@ void			push_b(Stack *a, Stack *b);
 void			push_a(Stack *b, Stack *a);
 void			rotate(Stack *s);
 void			reverse_rotate(Stack *s);
-void			push_swap(Stack *a, Stack *b);
-int				stack_size(Stack *s);
-int				find_min_index(Stack *s);
-/**funcao pra teste*/
-void			print_stack(const char *label, Stack *s);
-int				is_sorted(Stack *s);
+void			push_swap(Stack *s);
+void	print_stack(Stack *s); // remover se nao usar
+
 #endif
