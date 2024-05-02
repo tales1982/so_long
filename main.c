@@ -24,7 +24,7 @@ void	push_swap(Stack *s)
 				swapped = 1; // Uma troca foi feita
 			}
 			rotate(s); // Move o topo para o fundo para verificar o próximo par
-			//ft_putstr("ra\n");
+			ft_putstr("ra\n");
 			print_stack(s);
 			ft_putchar('\n');
 			count++;
