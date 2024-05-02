@@ -8,7 +8,7 @@ void	initStack(Stack *a)
 }
 
 // Adciona um elemento na pilha_A
-void	push(Stack *a, int data)
+void	ft_push(Stack *a, int data)
 {
 	Node	*newNode;
 
