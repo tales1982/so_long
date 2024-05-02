@@ -1,5 +1,5 @@
 NAME		= push_swap
-SRC			= push_swap.c \
+SRC			= main.c \
 			outils/ft_atoi.c \
 			outils/ft_putstr.c \
 			outils/ft_putnbr.c \
