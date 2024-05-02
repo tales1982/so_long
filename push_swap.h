@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/30 18:54:18 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/04/30 18:54:21 by tlima-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 
 # define PUSH_SWAP_H
@@ -28,12 +40,13 @@ void			ft_putnbr(int n);
 int				stack_size(Stack *s);
 void			peek(Stack *s);
 void			initStack(Stack *s);
-void			push(Stack *s, int data);
-void			push_b(Stack *a, Stack *b);
-void			push_a(Stack *b, Stack *a);
+void			ft_push(Stack *s, int data);
+void			ft_push_b(Stack *a, Stack *b);
+void			ft_push_a(Stack *b, Stack *a);
 void			rotate(Stack *s);
 void			reverse_rotate(Stack *s);
 void			push_swap(Stack *s);
+int				ft_pop(Stack *s);
 void	print_stack(Stack *s); // remover se nao usar
 
 #endif
