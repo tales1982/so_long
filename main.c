@@ -12,7 +12,6 @@
 
 #include "./push_swap.h"
 
-
 int	isEmpty(Stack *s)
 {
 	return (s->top == NULL);
@@ -43,35 +42,36 @@ void	quick_sort_stack(Stack *a, Stack *b)
 		else
 		{
 			ft_push(&greater, element);
-			ft_putstr("pb\n");
+			// ft_putstr("pb\n");
 		}
 	}
 	// Ordena recursivamente cada pilha
 	quick_sort_stack(&less, b);
-	//ft_putstr("pa\n");
+	// ft_putstr("pa\n");
 	quick_sort_stack(&greater, b);
-	//ft_putstr("pb\n");
+	// ft_putstr("pb\n");
 	// Combinar tudo de volta na pilha original, respeitando a ordem
 	while (!isEmpty(&greater))
 	{
 		ft_push(b, greater.top->data);
-		//ft_putstr("pb\n");
+		// ft_putstr("pb\n");
 		ft_pop(&greater);
 	}
 	ft_push(b, pivot); // Adiciona o pivô de volta
 	while (!isEmpty(&less))
 	{
 		ft_push(b, less.top->data);
-		ft_putstr("pa\n");
+		// ft_putstr("pa\n");
 		ft_pop(&less);
 	}
 	// Move tudo de volta para a pilha original
 	while (!isEmpty(b))
 	{
 		ft_push(a, b->top->data);
-		//ft_putstr("p\n");
+		// ft_putstr("p\n");
 		ft_pop(b);
 	}
+
 }
 
 void	push_swap(Stack *a)
@@ -101,6 +101,9 @@ int	main(int argc, char **argv)
 		peek(&a); // Exibir estado inicial
 		ft_putchar('\n');
 		push_swap(&a);
+		ft_putchar('\n');
+		ft_putchar('\n');
+		ft_putstr("Pilha A Ordenada\n");
 		peek(&a); // Exibir estado após ordenação
 		return (0);
 	}
