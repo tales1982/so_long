@@ -9,5 +9,5 @@ void	print_stack(Stack *s)
 		printf("%d ", current->data);
 		current = current->next;
 	}
-	printf("\n");
+	 printf("\n");//remover esta linha
 }
