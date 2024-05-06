@@ -1,16 +1,18 @@
 NAME		= push_swap
-SRC			= main.c \
+SRC			= push_swap.c \
 			outils/ft_atoi.c \
 			outils/ft_putstr.c \
 			outils/ft_putnbr.c \
 			outils/stack_size.c \
 			outils/print_stack.c \
+			operations/ft_is_empty.c \
 			operations/ft_peek.c \
 			operations/ft_pop.c \
 			operations/ft_push.c \
 			operations/ft_swap.c \
 			operations/ft_rotate.c \
-			operations/ft_rotate_rev.c
+			operations/ft_rotate_rev.c \
+			quick_sort/quick_sort.c \
 
 OBJS		= $(SRC:.c=.o)
 

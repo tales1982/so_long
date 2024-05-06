@@ -41,12 +41,15 @@ int				stack_size(Stack *s);
 void			peek(Stack *s);
 void			initStack(Stack *s);
 void			ft_push(Stack *s, int data);
-void			ft_push_b(Stack *a, Stack *b);
-void			ft_push_a(Stack *b, Stack *a);
+// void			ft_push_b(Stack *a, Stack *b);
+void			ft_push_a(Stack *a, int data);
+void			ft_push_b(Stack *b, int s);
 void			rotate(Stack *s);
 void			reverse_rotate(Stack *s);
 void			push_swap(Stack *s);
 int				ft_pop(Stack *s);
-void	print_stack(Stack *s); // remover se nao usar
-
+int				ft_is_empty(Stack *s);
+void			print_stack(Stack *s);
+void			quick_sort_stack(Stack *a, Stack *b);
+void			push_swap(Stack *a);
 #endif
