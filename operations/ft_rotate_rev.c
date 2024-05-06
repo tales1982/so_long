@@ -1,30 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rotate_rev.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/30 18:53:09 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/04/30 18:53:13 by tlima-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "../push_swap.h"
 
 void	reverse_rotate(Stack *s)
 {
-	//rra -->rrb -->rrr
 	Node	*last;
 	Node	*second_last;
 
 	if (s->top == NULL || s->top->next == NULL)
-	{
-		// Se a pilha está vazia ou tem apenas um elemento,não há necessidade de rotação
-			
 		return ;
-	}
 	last = s->top;
 	second_last = NULL;
-	// Encontrar o último e o penúltimo elemento
 	while (last->next != NULL)
 	{
 		second_last = last;
 		last = last->next;
 	}
-	// O último elemento aponta para o topo antigo
 	last->next = s->top;
-	// O penúltimo agora é o último
 	second_last->next = NULL;
-	// Atualiza o topo para ser o último elemento
 	s->top = last;
 }
+
+// Função para mover pilha A
+void move_stack_a(Stack *a) {
+    reverse_rotate(a);
+	ft_putstr("rra\n");
+}
+
+// Função para mover pilha B
+void move_stack_b(Stack *b) {
+    reverse_rotate(b);
+	ft_putstr("rrb\n");
+}
+
+// Função para mover ambas as pilhas A e B
+void move_both(Stack *a, Stack *b) {
+    move_stack_a(a);
+    move_stack_b(b);
+	ft_putstr("rrr\n");
+}
+
+

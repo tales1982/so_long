@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/29 19:37:58 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/04/29 19:38:01 by tlima-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "../push_swap.h"
 
@@ -8,47 +20,31 @@ void	initStack(Stack *a)
 }
 
 // Adciona um elemento na pilha_A
-void	ft_push(Stack *a, int data)
+void	ft_push(Stack *s, int data)
 {
 	Node	*newNode;
 
 	newNode = (Node *)malloc(sizeof(Node));
 	if (newNode == NULL)
 	{
+		ft_putstr("Error \n");
 		return;
-		//ft_putstr("Error \n");
 	}
 	else
 	{
 		newNode->data = data;
-		newNode->next = a->top;
-		a->top = newNode;
+		newNode->next = s->top;
+		s->top = newNode;
 	}
 }
-//joga da pilha_A para pilha_B --> PB
-void push_b(Stack *a, Stack *b)
+void	ft_push_a(Stack *a, int data)
 {
-	if(a->top == NULL)
-		return;
-	else
-	{
-		Node *temp = a->top;
-		a->top = a->top->next;
-		temp->next = b->top;
-		b->top = temp; 
-	}
+	ft_push(a,data);
+	ft_putstr("pa\n");
 }
 
-//joga da pilha_>B para pilha_A --> PA
-void push_a(Stack *b, Stack *a)
+void	ft_push_b(Stack *b, int data)
 {
-	if(b->top == NULL)
-		return;
-	else
-	{
-		Node *temp = b->top;
-		b->top = b->top->next;
-		temp->next = a->top;
-		a->top = temp; 
-	}
+	ft_push(b,data);
+	ft_putstr("pb\n");
 }
