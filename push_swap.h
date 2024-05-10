@@ -1,55 +1,72 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 18:54:18 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/04/30 18:54:21 by tlima-de         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-
 # define PUSH_SWAP_H
 
-//******************* LIBRARIES ********************
-# include <stdio.h> //remover depois !!!!!!!!!!!!!!!!1
+# include <limits.h> // para limts
+# include <stddef.h> // Para o tipo size_t
+#include <stdio.h> // excluir!!!!!!!
 # include <stdlib.h>
 # include <unistd.h>
-//************* struct *******************
-typedef struct node
+typedef struct s_lst
 {
-	int			data;
-	struct node	*next;
-}				Node;
+	int				content;
+	int				index;
+	struct s_lst	*next;
+	struct s_lst	*prev;
+}					t_lst;
 
-typedef struct
-{
-	Node		*top;
-}				Stack;
+// SIMPLE_SORT_C
+int					is_sorted(t_lst **stack);
+void				simple_sort(t_lst **a_stack, t_lst **b_stack);
 
-int				main(int argc, char **argv);
-void			ft_swap_two_first_elements(Stack *s);
-void			ft_swap_two_elements_stacks_a_b(Stack *a, Stack *b);
-int				ft_atoi(const char *str);
-void			ft_putstr(char *str);
-void			ft_putchar(char c);
-void			ft_putnbr(int n);
-int				stack_size(Stack *s);
-void			peek(Stack *s);
-void			initStack(Stack *s);
-void			ft_push(Stack *s, int data);
-// void			ft_push_b(Stack *a, Stack *b);
-void			ft_push_a(Stack *a, int data);
-void			ft_push_b(Stack *b, int s);
-void			rotate(Stack *s);
-void			reverse_rotate(Stack *s);
-void			push_swap(Stack *s);
-int				ft_pop(Stack *s);
-int				ft_is_empty(Stack *s);
-void			print_stack(Stack *s);
-void			quick_sort_stack(Stack *a, Stack *b);
-void			push_swap(Stack *a);
+// SIMPLE_SORT_UTLIS_C
+int					is_sorted(t_lst **stack);
+int					is_order(t_lst **stack, int size);
+void				reset_index(t_lst **stack);
+void				rotate_to_min(t_lst **stack, int size);
+
+// INDEX_C
+void				ps_index(t_lst **stack);
+
+// RADIX_C
+int					lst_size(t_lst *lst);
+void				radix_sort(t_lst **a_stack, t_lst **b_stack);
+
+// LST_UTILS_C
+void				lst_addfront(t_lst **stack, t_lst *news);
+void				lst_addback(t_lst **stack, t_lst *news);
+t_lst				*lst_new(int content);
+t_lst				*lst_last(t_lst *stack);
+
+// SWAP_C
+void				do_sa(t_lst **stack);
+void				do_sb(t_lst **stack);
+void				do_ss(t_lst **a_stack, t_lst **b_stack);
+
+// PUSH_C
+void				do_pa(t_lst **a_stack, t_lst **b_stack);
+void				do_pb(t_lst **a_stack, t_lst **b_stack);
+
+// ROTATE_C
+void				rotate(t_lst **stack);
+void				do_ra(t_lst **stack);
+void				do_rb(t_lst **stack);
+void				do_rr(t_lst **a_stack, t_lst **b_stack);
+
+// REVERSE_C
+void				reverse(t_lst **stack);
+void				do_rra(t_lst **stack);
+void				do_rrb(t_lst **stack);
+void				do_rrr(t_lst **a_stack, t_lst **b_stack);
+
+// utils
+int					ft_atoi(const char *str);
+long				ft_atol(const char *str);
+int					ft_putstr_fd(char *s, int fd);
+void				free_split(char **split);
+size_t				ft_strlen(const char *str);
+void	print_stack(t_lst *stack);
+// split
+char				**ft_split(char const *s, char c);
+
 #endif

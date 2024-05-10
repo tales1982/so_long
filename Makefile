@@ -1,18 +1,22 @@
-NAME		= push_swap
-SRC			= push_swap.c \
-			outils/ft_atoi.c \
-			outils/ft_putstr.c \
-			outils/ft_putnbr.c \
-			outils/stack_size.c \
-			outils/print_stack.c \
-			operations/ft_is_empty.c \
-			operations/ft_peek.c \
-			operations/ft_pop.c \
-			operations/ft_push.c \
-			operations/ft_swap.c \
-			operations/ft_rotate.c \
-			operations/ft_rotate_rev.c \
-			quick_sort/quick_sort.c \
+NAME	= push_swap
+SRC = src/index.c \
+      src/push_swap.c \
+      src/push.c \
+      src/radix.c \
+      src/reverse.c \
+      src/rotate.c \
+      src/swap.c \
+      src/simple_sort.c \
+      src/simple_sort_utils.c \
+      src/lst_utils.c \
+      utils/ft_atoi.c \
+      utils/ft_atol.c \
+      utils/ft_split.c \
+      utils/ft_putstr_fd.c \
+      utils/free_split.c \
+      utils/ft_strlen.c \
+      utils/ft_peek.c
+
 
 OBJS		= $(SRC:.c=.o)
 
