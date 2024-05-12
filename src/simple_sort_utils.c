@@ -2,9 +2,9 @@
 
 #include "../push_swap.h"
 
-int	is_sorted(t_lst **stack)
+int	is_sorted(STACK **stack)
 {
-	t_lst	*tmp;
+	STACK	*tmp;
 
 	tmp = *stack;
 	while (tmp->next)
@@ -16,7 +16,7 @@ int	is_sorted(t_lst **stack)
 	return (1);
 }
 
-int	is_order(t_lst **stack, int size)
+int	is_order(STACK **stack, int size)
 {
 	int	i;
 
@@ -45,9 +45,9 @@ int	is_order(t_lst **stack, int size)
 	return (0);
 }
 
-void	reset_index(t_lst **stack)
+void	reset_index(STACK **stack)
 {
-	t_lst	*lst;
+	STACK	*lst;
 
 	lst = *stack;
 	while (lst)
@@ -58,7 +58,7 @@ void	reset_index(t_lst **stack)
 	ps_index(stack);
 }
 
-void	rotate_to_min(t_lst **stack, int size)
+void	rotate_to_min(STACK **stack, int size)
 {
 	int	i;
 

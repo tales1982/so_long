@@ -1,10 +1,10 @@
 
 #include "../push_swap.h"
 
-static t_lst	*ps_get_min(t_lst **stack)
+static STACK	*ps_get_min(STACK **stack)
 {
-	t_lst	*lst;
-	t_lst	*lst_min;
+	STACK	*lst;
+	STACK	*lst_min;
 	int		min;
 
 	if (!(*stack))
@@ -24,9 +24,9 @@ static t_lst	*ps_get_min(t_lst **stack)
 	return (lst_min);
 }
 
-void	ps_index(t_lst **stack)
+void	ps_index(STACK **stack)
 {
-	t_lst	*lst;
+	STACK	*lst;
 	int		index;
 
 	index = 0;

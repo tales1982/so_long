@@ -2,9 +2,9 @@
 
 #include "../push_swap.h"
 
-void	rotate(t_lst **stack)
+void	rotate(STACK **stack)
 {
-	t_lst	*lst;
+	STACK	*lst;
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
@@ -16,19 +16,19 @@ void	rotate(t_lst **stack)
 	lst->next->next = NULL;
 }
 
-void	ra(t_lst **stack)
+void	ra(STACK **stack)
 {
 	rotate(stack);
 	ft_putstr_fd("ra\n", 1);
 }
 
-void	rb(t_lst **stack)
+void	rb(STACK **stack)
 {
 	rotate(stack);
 	ft_putstr_fd("rb\n", 1);
 }
 
-void	rr(t_lst **a_stack, t_lst **b_stack)
+void	rr(STACK **a_stack, STACK **b_stack)
 {
 	rotate(a_stack);
 	rotate(b_stack);

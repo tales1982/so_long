@@ -11,3 +11,9 @@ void	free_split(char **split)
 	}
 	free(split);
 }
+
+/*
+free_split, que é projetada para liberar a memória alocada para um array de strings, 
+geralmente criado por uma função como strsplit que divide uma string em múltiplos substrings baseados em delimitadores. 
+Vamos analisar o código parte por parte:
+*/

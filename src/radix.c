@@ -1,9 +1,9 @@
 
 #include "../push_swap.h"
 
-static int	get_maxbits_lst(t_lst **stack)
+static int	get_maxbits_lst(STACK **stack)
 {
-	t_lst	*lst;
+	STACK	*lst;
 	int		max;
 	int		max_b;
 
@@ -21,10 +21,10 @@ static int	get_maxbits_lst(t_lst **stack)
 	return (max_b);
 }
 
-int	lst_size(t_lst *stack)
+int	lst_size(STACK *stack)
 {
 	int		i;
-	t_lst	*lst;
+	STACK	*lst;
 
 	lst = stack;
 	i = 0;
@@ -36,9 +36,9 @@ int	lst_size(t_lst *stack)
 	return (i);
 }
 
-void	radix_sort(t_lst **a_stack, t_lst **b_stack)
+void	radix_sort(STACK **a_stack, STACK **b_stack)
 {
-	t_lst	*lst;
+	STACK	*lst;
 	int		i;
 	int		j;
 	int		size;

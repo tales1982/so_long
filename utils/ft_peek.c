@@ -6,15 +6,15 @@
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 19:37:43 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/05/11 07:50:28 by tales            ###   ########.fr       */
+/*   Updated: 2024/05/12 11:45:28 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	print_stack(t_lst *stack)
+void	print_stack(STACK *stack)
 {
-	t_lst	*current;
+	STACK	*current;
 
 	current = stack;
 	if (current == NULL)
@@ -31,3 +31,7 @@ void	print_stack(t_lst *stack)
 		}
 	}
 }
+
+/*
+Visualizar a pilha
+*/

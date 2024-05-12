@@ -2,7 +2,7 @@
 
 #include "../push_swap.h"
 
-static void	sort_tree(t_lst **stack)
+static void	sort_tree(STACK **stack)
 {
 	while (is_sorted(stack) != 1)
 	{
@@ -17,7 +17,7 @@ static void	sort_tree(t_lst **stack)
 	}
 }
 
-static void	sort_four(t_lst **a_stack, t_lst **b_stack)
+static void	sort_four(STACK **a_stack, STACK **b_stack)
 {
 	if (is_order(a_stack, 4) == 1)
 		return ;
@@ -28,7 +28,7 @@ static void	sort_four(t_lst **a_stack, t_lst **b_stack)
 	pa(a_stack, b_stack);
 }
 
-void	simple_sort(t_lst **a_stack, t_lst **b_stack)
+void	simple_sort(STACK **a_stack, STACK **b_stack)
 {
 	int	size;
 

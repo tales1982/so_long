@@ -26,3 +26,6 @@ int	ft_atoi(const char *str)
 	}
 	return (res * neg);
 }
+/*
+A função atoi (ASCII to Integer). Esta função converte uma string numérica em um valor inteiro. 
+*/

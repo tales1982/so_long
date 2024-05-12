@@ -62,3 +62,12 @@ char	**ft_split(char const *s, char c)
 	split[j] = 0;
 	return (split);
 }
+
+/*
+Usa count_words para determinar quantos elementos (palavras) serão no array resultante e 
+aloca memória suficiente para essas palavras mais um elemento nulo para marcar o fim do array.
+Percorre a string s e usa a variável index para marcar onde uma palavra começa. 
+Quando encontra um delimitador ou chega ao fim da string, usa word_dup para copiar a palavra para o array split.
+Finaliza o array com um ponteiro nulo.
+
+*/

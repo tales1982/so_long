@@ -6,7 +6,7 @@
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 18:01:49 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/05/11 07:50:35 by tales            ###   ########.fr       */
+/*   Updated: 2024/05/12 11:46:01 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,7 @@ int	ft_putstr_fd(char *s, int fd)
 	write(fd, s, i);
 	return (i);
 }
+
+/*
+Imprimir string
+*/

@@ -8,7 +8,7 @@ SRC = src/index.c \
       src/swap.c \
       src/simple_sort.c \
       src/simple_sort_utils.c \
-      src/lst_utils.c \
+      utils/lst_utils.c \
       utils/ft_atoi.c \
       utils/ft_atol.c \
       utils/ft_split.c \
