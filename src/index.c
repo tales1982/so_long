@@ -14,8 +14,7 @@ static t_lst	*ps_get_min(t_lst **stack)
 	lst = *stack;
 	while (lst)
 	{
-		if ((lst->index == -1)
-			&& (!min || lst->content < lst_min->content))
+		if ((lst->index == -1) && (!min || lst->content < lst_min->content))
 		{
 			lst_min = lst;
 			min = 1;

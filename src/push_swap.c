@@ -2,7 +2,6 @@
 
 #include "../push_swap.h"
 
-
 static int	ps_check_dup(t_lst *stack)
 {
 	int		tmp;
@@ -32,7 +31,6 @@ static void	ps_stackclear(t_lst **stack)
 	*stack = NULL;
 }
 
-
 static int	ps_initstack(int ac, char **av, t_lst **a_stack)
 {
 	int		i;
@@ -61,42 +59,41 @@ static int	ps_initstack(int ac, char **av, t_lst **a_stack)
 
 #include "../push_swap.h"
 
-int main(int ac, char **av) {
-    t_lst *a_stack;
-    t_lst *b_stack;
+int	main(int ac, char **av)
+{
+	t_lst	*a_stack;
+	t_lst	*b_stack;
 
-    if (ac == 1)
-        return (ft_putstr_fd("Error\n", 1));
-
-    a_stack = NULL;
-    b_stack = NULL;
-
-    // Inicializando e verificando pilha
-    if (ps_initstack(ac, av, &a_stack) == 0 || ps_check_dup(a_stack) == -1)
-        return (ft_putstr_fd("Error\n", 1));
-
-    // Imprime a pilha antes de qualquer operação de ordenação
-    printf("Pilha A antes da ordenação:\n");
-    print_stack(a_stack);
-
-    // Indexa e ordena se necessário
-    ps_index(&a_stack);
-    if (is_sorted(&a_stack) != 1) {
-        if (lst_size(a_stack) <= 5) {
-            simple_sort(&a_stack, &b_stack);
-        } else {
-            radix_sort(&a_stack, &b_stack);
-        }
-        // Imprime a pilha após a ordenação
-        printf("Pilha A após ordenação:\n");
-        print_stack(a_stack);
-        printf("Pilha B (auxiliar) após ordenação:\n");
-        print_stack(b_stack);
-    }
-
-    // Limpeza final das pilhas
-    ps_stackclear(&a_stack);
-    ps_stackclear(&b_stack);
-
-    return 0;
+	if (ac == 1)
+		return (ft_putstr_fd("Error\n", 1));
+	a_stack = NULL;
+	b_stack = NULL;
+	// Inicializando e verificando pilha
+	if (ps_initstack(ac, av, &a_stack) == 0 || ps_check_dup(a_stack) == -1)
+		return (ft_putstr_fd("Error\n", 1));
+	// Imprime a pilha antes de qualquer operação de ordenação
+	// printf("Pilha A antes da ordenação:\n");
+	// print_stack(a_stack);
+	// Indexa e ordena se necessário
+	ps_index(&a_stack);
+	if (is_sorted(&a_stack) != 1)
+	{
+		if (lst_size(a_stack) <= 5)
+		{
+			simple_sort(&a_stack, &b_stack);
+		}
+		else
+		{
+			radix_sort(&a_stack, &b_stack);
+		}
+		// Imprime a pilha após a ordenação
+		// printf("Pilha A após ordenação:\n");
+		// print_stack(a_stack);
+		// printf("Pilha B (auxiliar) após ordenação:\n");
+		// print_stack(b_stack);
+	}
+	// Limpeza final das pilhas
+	ps_stackclear(&a_stack);
+	ps_stackclear(&b_stack);
+	return (0);
 }

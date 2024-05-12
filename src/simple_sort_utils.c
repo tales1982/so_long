@@ -31,12 +31,12 @@ int	is_order(t_lst **stack, int size)
 		if (i > (size / 2))
 		{
 			if (size == 5 && i == 3)
-				ft_putstr_fd("rra\n",1);
-			ft_putstr_fd("rra\n",1);
+				ft_putstr_fd("rra\n", 1);
+			ft_putstr_fd("rra\n", 1);
 		}
 		else
 			while (i-- > 0)
-				ft_putstr_fd("ra\n",1);
+				ft_putstr_fd("ra\n", 1);
 		return (1);
 	}
 	else
@@ -71,14 +71,14 @@ void	rotate_to_min(t_lst **stack, int size)
 	if ((i > (size / 2)))
 	{
 		if (size == 5 && i == 3)
-			ft_putstr_fd("rra\n",1);
-		ft_putstr_fd("rra\n",1);
+			ft_putstr_fd("rra\n", 1);
+		ft_putstr_fd("rra\n", 1);
 	}
 	else
 	{
 		while (i > 0)
 		{
-			ft_putstr_fd("ra\n",1);
+			ft_putstr_fd("ra\n", 1);
 			i--;
 		}
 	}

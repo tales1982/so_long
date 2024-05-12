@@ -55,11 +55,11 @@ void	radix_sort(t_lst **a_stack, t_lst **b_stack)
 		{
 			lst = *a_stack;
 			if (((lst->index >> i) & 1) == 0)
-				do_pb(a_stack, b_stack);
+				pb(a_stack, b_stack);
 			else
-				do_ra(a_stack);
+				ra(a_stack);
 		}
 		while (lst_size(*b_stack) != 0)
-			do_pa(a_stack, b_stack);
+			pa(a_stack, b_stack);
 	}
 }

@@ -15,21 +15,21 @@ void	reverse(t_lst **stack)
 	*stack = (*stack)->prev;
 }
 
-void	do_rra(t_lst **stack)
+void	rra(t_lst **stack)
 {
 	reverse(stack);
-	ft_putstr_fd("rra\n",1);
+	ft_putstr_fd("rra\n", 1);
 }
 
-void	do_rrb(t_lst **stack)
+void	rrb(t_lst **stack)
 {
 	reverse(stack);
-	ft_putstr_fd("rra\n",1);
+	ft_putstr_fd("rra\n", 1);
 }
 
-void	do_rrr(t_lst **a_stack, t_lst **b_stack)
+void	rrr(t_lst **a_stack, t_lst **b_stack)
 {
 	reverse(a_stack);
 	reverse(b_stack);
-	ft_putstr_fd("rrr\n",1);
+	ft_putstr_fd("rrr\n", 1);
 }

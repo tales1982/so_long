@@ -1,7 +1,6 @@
 
 #include "../push_swap.h"
 
-
 void	lst_addfront(t_lst **stack, t_lst *news)
 {
 	if (!stack || !news)

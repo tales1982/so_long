@@ -15,14 +15,14 @@ static void	push(t_lst **a_stack, t_lst **b_stack)
 		(*b_stack)->prev = NULL;
 }
 
-void	do_pa(t_lst **a_stack, t_lst **b_stack)
+void	pa(t_lst **a_stack, t_lst **b_stack)
 {
 	push(a_stack, b_stack);
-	ft_putstr_fd("pa\n",1);
+	ft_putstr_fd("pa\n", 1);
 }
 
-void	do_pb(t_lst **a_stack, t_lst **b_stack)
+void	pb(t_lst **a_stack, t_lst **b_stack)
 {
 	push(b_stack, a_stack);
-	ft_putstr_fd("pb\n",1);
+	ft_putstr_fd("pb\n", 1);
 }

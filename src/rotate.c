@@ -16,21 +16,21 @@ void	rotate(t_lst **stack)
 	lst->next->next = NULL;
 }
 
-void	do_ra(t_lst **stack)
+void	ra(t_lst **stack)
 {
 	rotate(stack);
-	ft_putstr_fd("ra\n",1);
+	ft_putstr_fd("ra\n", 1);
 }
 
-void	do_rb(t_lst **stack)
+void	rb(t_lst **stack)
 {
 	rotate(stack);
-	ft_putstr_fd("rb\n",1);
+	ft_putstr_fd("rb\n", 1);
 }
 
-void	do_rr(t_lst **a_stack, t_lst **b_stack)
+void	rr(t_lst **a_stack, t_lst **b_stack)
 {
 	rotate(a_stack);
 	rotate(b_stack);
-	ft_putstr_fd("rr\n",1);
+	ft_putstr_fd("rr\n", 1);
 }
