@@ -4,7 +4,6 @@
 
 # include <limits.h> // para limts
 # include <stddef.h> // Para o tipo size_t
-#include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 typedef struct s_lst
@@ -17,7 +16,8 @@ typedef struct s_lst
 
 // SIMPLE_SORT_C
 int					is_sorted(STACK **stack);
-void				simple_sort(STACK **a_stack, STACK **b_stack);
+void				conditional_sort_based_on_size(STACK **a_stack,
+						STACK **b_stack);
 
 // SIMPLE_SORT_UTLIS_C
 int					is_sorted(STACK **stack);
@@ -26,10 +26,10 @@ void				reset_index(STACK **stack);
 void				rotate_to_min(STACK **stack, int size);
 
 // INDEX_C
-void	index_all_elements_by_content(STACK **stack);
+void				index_all_elements_by_content(STACK **stack);
 
 // RADIX_C
-int					lst_size(STACK *lst);
+int					get_stack_size(STACK *lst);
 void				radix_sort(STACK **a_stack, STACK **b_stack);
 
 // LST_UTILS_C

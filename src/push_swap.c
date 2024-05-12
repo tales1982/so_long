@@ -68,31 +68,20 @@ int	main(int ac, char **av)
 		return (ft_putstr_fd("Error\n", 1));
 	a_stack = NULL;
 	b_stack = NULL;
-	// Inicializando e verificando pilha
 	if (ps_initstack(ac, av, &a_stack) == 0 || ps_check_dup(a_stack) == -1)
 		return (ft_putstr_fd("Error\n", 1));
-	// Imprime a pilha antes de qualquer operação de ordenação
-	// printf("Pilha A antes da ordenação:\n");
-	// print_stack(a_stack);
-	// Indexa e ordena se necessário
 	index_all_elements_by_content(&a_stack);
 	if (is_sorted(&a_stack) != 1)
 	{
-		if (lst_size(a_stack) <= 5)
+		if (get_stack_size(a_stack) <= 5)
 		{
-			simple_sort(&a_stack, &b_stack);
+			conditional_sort_based_on_size(&a_stack, &b_stack);
 		}
 		else
 		{
 			radix_sort(&a_stack, &b_stack);
 		}
-		// Imprime a pilha após a ordenação
-		// printf("Pilha A após ordenação:\n");
-		// print_stack(a_stack);
-		// printf("Pilha B (auxiliar) após ordenação:\n");
-		// print_stack(b_stack);
 	}
-	// Limpeza final das pilhas
 	ps_stackclear(&a_stack);
 	ps_stackclear(&b_stack);
 	return (0);

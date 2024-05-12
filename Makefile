@@ -6,7 +6,7 @@ SRC = src/index.c \
       src/reverse.c \
       src/rotate.c \
       src/swap.c \
-      src/simple_sort.c \
+      src/stack_operations.c \
       src/simple_sort_utils.c \
       utils/lst_utils.c \
       utils/ft_atoi.c \
@@ -15,7 +15,6 @@ SRC = src/index.c \
       utils/ft_putstr_fd.c \
       utils/free_split.c \
       utils/ft_strlen.c \
-      utils/ft_peek.c
 
 
 OBJS		= $(SRC:.c=.o)
