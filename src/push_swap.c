@@ -2,10 +2,10 @@
 
 #include "../push_swap.h"
 
-static int	ps_check_dup(STACK *stack)
+static int	ps_check_dup(t_stack *stack)
 {
 	int		tmp;
-	STACK	*dup;
+	t_stack	*dup;
 
 	while (stack && stack->next)
 	{
@@ -22,7 +22,7 @@ static int	ps_check_dup(STACK *stack)
 	return (1);
 }
 
-static void	ps_stackclear(STACK **stack)
+static void	ps_stackclear(t_stack **stack)
 {
 	if (!stack || !(*stack))
 		return ;
@@ -31,7 +31,7 @@ static void	ps_stackclear(STACK **stack)
 	*stack = NULL;
 }
 
-static int	ps_initstack(int ac, char **av, STACK **a_stack)
+static int	ps_initstack(int ac, char **av, t_stack **a_stack)
 {
 	int		i;
 	int		j;
@@ -61,8 +61,8 @@ static int	ps_initstack(int ac, char **av, STACK **a_stack)
 
 int	main(int ac, char **av)
 {
-	STACK	*a_stack;
-	STACK	*b_stack;
+	t_stack	*a_stack;
+	t_stack	*b_stack;
 
 	if (ac == 1)
 		return (ft_putstr_fd("Error\n", 1));

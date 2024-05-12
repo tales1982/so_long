@@ -1,9 +1,9 @@
 
 #include "../push_swap.h"
 
-void	reverse(STACK **stack)
+void	reverse(t_stack **stack)
 {
-	STACK	*lst;
+	t_stack	*lst;
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
@@ -15,19 +15,19 @@ void	reverse(STACK **stack)
 	*stack = (*stack)->prev;
 }
 
-void	rra(STACK **stack)
+void	rra(t_stack **stack)
 {
 	reverse(stack);
 	ft_putstr_fd("rra\n", 1);
 }
 
-void	rrb(STACK **stack)
+void	rrb(t_stack **stack)
 {
 	reverse(stack);
 	ft_putstr_fd("rra\n", 1);
 }
 
-void	rrr(STACK **a_stack, STACK **b_stack)
+void	rrr(t_stack **a_stack, t_stack **b_stack)
 {
 	reverse(a_stack);
 	reverse(b_stack);

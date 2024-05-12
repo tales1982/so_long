@@ -10,9 +10,9 @@ Verifica se os elementos da lista estão ordenados de forma crescente com base e
 °Se a lista inteira é percorrida sem encontrar tais elementos, retorna 1 (indicando que a lista está ordenada).
 
 */
-int	is_sorted(STACK **stack)
+int	is_sorted(t_stack **stack)
 {
-	STACK	*tmp;
+	t_stack	*tmp;
 
 	tmp = *stack;
 	while (tmp->next)
@@ -31,7 +31,7 @@ capacidade total e executa a rotação reversa adequada, enquanto imprime as aç
 °Se não está ordenada, executa uma série de reversões.
 °Retorna 1 se a lista estiver ordenada; caso contrário, retorna 0.
 */
-int	is_order(STACK **stack, int size)
+int	is_order(t_stack **stack, int size)
 {
 	int	i;
 
@@ -64,9 +64,9 @@ Reseta os índices de todos os elementos para -1 e depois reindexa todos os elem
 ° Percorre a lista ligada, resetando o índice de cada elemento para -1.
 ° Chama uma função (index_all_elements_by_content) para reindexar os elementos de acordo com alguma métrica de conteúdo.
 */
-void	reset_index(STACK **stack)
+void	reset_index(t_stack **stack)
 {
-	STACK	*lst;
+	t_stack	*lst;
 
 	lst = *stack;
 	while (lst)
@@ -83,7 +83,7 @@ Gira a pilha até que o elemento com índice 0 esteja no topo, escolhendo a rota
  °Baseado no número de rotações feitas, decide se continua girando na mesma direção ou se faz
   rotações na direção oposta para minimizar o total de movimentos, imprimindo cada movimento.
 */
-void	rotate_to_min(STACK **stack, int size)
+void	rotate_to_min(t_stack **stack, int size)
 {
 	int	i;
 

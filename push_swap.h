@@ -1,4 +1,3 @@
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -12,52 +11,52 @@ typedef struct s_lst
 	int				index;
 	struct s_lst	*next;
 	struct s_lst	*prev;
-}					STACK;
+}					t_stack;
 
 // SIMPLE_SORT_C
-int					is_sorted(STACK **stack);
-void				conditional_sort_based_on_size(STACK **a_stack,
-						STACK **b_stack);
+int					is_sorted(t_stack **stack);
+void				conditional_sort_based_on_size(t_stack **a_stack,
+						t_stack **b_stack);
 
 // SIMPLE_SORT_UTLIS_C
-int					is_sorted(STACK **stack);
-int					is_order(STACK **stack, int size);
-void				reset_index(STACK **stack);
-void				rotate_to_min(STACK **stack, int size);
+int					is_sorted(t_stack **stack);
+int					is_order(t_stack **stack, int size);
+void				reset_index(t_stack **stack);
+void				rotate_to_min(t_stack **stack, int size);
 
 // INDEX_C
-void				index_all_elements_by_content(STACK **stack);
+void				index_all_elements_by_content(t_stack **stack);
 
 // RADIX_C
-int					get_stack_size(STACK *lst);
-void				radix_sort(STACK **a_stack, STACK **b_stack);
+int					get_stack_size(t_stack *lst);
+void				radix_sort(t_stack **a_stack, t_stack **b_stack);
 
 // LST_UTILS_C
-void				lst_addfront(STACK **stack, STACK *news);
-void				lst_addback(STACK **stack, STACK *news);
-STACK				*lst_new(int content);
-STACK				*lst_last(STACK *stack);
+void				lst_addfront(t_stack **stack, t_stack *news);
+void				lst_addback(t_stack **stack, t_stack *news);
+t_stack				*lst_new(int content);
+t_stack				*lst_last(t_stack *stack);
 
 // SWAP_C
-void				sa(STACK **stack);
-void				sb(STACK **stack);
-void				ss(STACK **a_stack, STACK **b_stack);
+void				sa(t_stack **stack);
+void				sb(t_stack **stack);
+void				ss(t_stack **a_stack, t_stack **b_stack);
 
 // PUSH_C
-void				pa(STACK **a_stack, STACK **b_stack);
-void				pb(STACK **a_stack, STACK **b_stack);
+void				pa(t_stack **a_stack, t_stack **b_stack);
+void				pb(t_stack **a_stack, t_stack **b_stack);
 
 // ROTATE_C
-void				rotate(STACK **stack);
-void				ra(STACK **stack);
-void				rb(STACK **stack);
-void				rr(STACK **a_stack, STACK **b_stack);
+void				rotate(t_stack **stack);
+void				ra(t_stack **stack);
+void				rb(t_stack **stack);
+void				rr(t_stack **a_stack, t_stack **b_stack);
 
 // REVERSE_C
-void				reverse(STACK **stack);
-void				rra(STACK **stack);
-void				rrb(STACK **stack);
-void				rrr(STACK **a_stack, STACK **b_stack);
+void				reverse(t_stack **stack);
+void				rra(t_stack **stack);
+void				rrb(t_stack **stack);
+void				rrr(t_stack **a_stack, t_stack **b_stack);
 
 // utils
 int					ft_atoi(const char *str);
@@ -65,7 +64,6 @@ long				ft_atol(const char *str);
 int					ft_putstr_fd(char *s, int fd);
 void				free_split(char **split);
 size_t				ft_strlen(const char *str);
-void				print_stack(STACK *stack);
 // split
 char				**ft_split(char const *s, char c);
 

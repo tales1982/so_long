@@ -1,7 +1,7 @@
 
 #include "../push_swap.h"
 
-static void	swap(STACK **stack)
+static void	swap(t_stack **stack)
 {
 	int	index;
 	int	content;
@@ -16,19 +16,19 @@ static void	swap(STACK **stack)
 	(*stack)->index = index;
 }
 
-void	sa(STACK **stack)
+void	sa(t_stack **stack)
 {
 	swap(stack);
 	ft_putstr_fd("sa\n", 1);
 }
 
-void	sb(STACK **stack)
+void	sb(t_stack **stack)
 {
 	swap(stack);
 	ft_putstr_fd("sb\n", 1);
 }
 
-void	ss(STACK **a_stack, STACK **b_stack)
+void	ss(t_stack **a_stack, t_stack **b_stack)
 {
 	swap(a_stack);
 	swap(b_stack);

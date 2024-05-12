@@ -8,9 +8,9 @@ Objetivo: Determina o número de bits necessários para representar o maior índ
  Isso é feito incrementando max_b até que o resultado do deslocamento seja zero.
 */
 
-static int	calculate_max_index_bits(STACK **stack)
+static int	calculate_max_index_bits(t_stack **stack)
 {
-	STACK	*lst;
+	t_stack	*lst;
 	int		max;
 	int		max_b;
 
@@ -33,10 +33,10 @@ static int	calculate_max_index_bits(STACK **stack)
 ° Inicializa um contador i.
 ° Percorre a lista ligada, incrementando i para cada elemento até chegar ao final da lista (lst == NULL).
 */
-int	get_stack_size(STACK *stack)
+int	get_stack_size(t_stack *stack)
 {
 	int		i;
-	STACK	*lst;
+	t_stack	*lst;
 
 	lst = stack;
 	i = 0;
@@ -56,9 +56,9 @@ Objetivo: Ordena a lista ligada a_stack usando o algoritmo Radix Sort,
  deve ser movido para a lista auxiliar b_stack (pb) ou se deve ser rotacionado dentro de a_stack (ra).
 ° Após processar todos os bits, elementos em b_stack são movidos de volta para a_stack (pa), completando a ordenação.
 */
-void	radix_sort(STACK **a_stack, STACK **b_stack)
+void	radix_sort(t_stack**a_stack, t_stack **b_stack)
 {
-	STACK	*lst;
+	t_stack	*lst;
 	int		i;
 	int		j;
 	int		size;

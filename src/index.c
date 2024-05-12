@@ -1,10 +1,10 @@
 
 #include "../push_swap.h"
 
-static STACK	*find_next_unindexed_min(STACK **stack)
+static t_stack	*find_next_unindexed_min(t_stack **stack)
 {
-	STACK	*lst;
-	STACK	*lst_min;
+	t_stack	*lst;
+	t_stack	*lst_min;
 	int		min;
 
 	if (!(*stack))
@@ -23,9 +23,9 @@ static STACK	*find_next_unindexed_min(STACK **stack)
 	}
 	return (lst_min);
 }
-void	index_all_elements_by_content(STACK **stack)
+void	index_all_elements_by_content(t_stack **stack)
 {
-	STACK	*lst;
+	t_stack	*lst;
 	int		index;
 
 	index = 0;

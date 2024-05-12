@@ -2,7 +2,7 @@
 
 #include "../push_swap.h"
 
-static void	sort_three_elements(STACK **stack)
+static void	sort_three_elements(t_stack **stack)
 {
 	while (is_sorted(stack) != 1)
 	{
@@ -17,7 +17,7 @@ static void	sort_three_elements(STACK **stack)
 	}
 }
 
-static void	sort_four_with_auxiliary(STACK **a_stack, STACK **b_stack)
+static void	sort_four_with_auxiliary(t_stack **a_stack, t_stack **b_stack)
 {
 	if (is_order(a_stack, 4) == 1)
 		return ;
@@ -28,7 +28,7 @@ static void	sort_four_with_auxiliary(STACK **a_stack, STACK **b_stack)
 	pa(a_stack, b_stack);
 }
 
-void	conditional_sort_based_on_size(STACK **a_stack, STACK **b_stack)
+void	conditional_sort_based_on_size(t_stack **a_stack, t_stack **b_stack)
 {
 	int	size;
 

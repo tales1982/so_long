@@ -1,3 +1,4 @@
+
 NAME	= push_swap
 SRC = src/index.c \
       src/push_swap.c \

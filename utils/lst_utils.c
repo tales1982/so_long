@@ -1,7 +1,7 @@
 
 #include "../push_swap.h"
 
-void	lst_addfront(STACK **stack, STACK *news)
+void	lst_addfront(t_stack **stack, t_stack *news)
 {
 	if (!stack || !news)
 		return ;
@@ -18,9 +18,9 @@ void	lst_addfront(STACK **stack, STACK *news)
 	news->prev = NULL;
 }
 
-void	lst_addback(STACK **stack, STACK *news)
+void	lst_addback(t_stack **stack, t_stack *news)
 {
-	STACK	*tmp;
+	t_stack	*tmp;
 
 	if (!stack || !news)
 		return ;
@@ -38,11 +38,11 @@ void	lst_addback(STACK **stack, STACK *news)
 	news->prev = tmp;
 }
 
-STACK	*lst_new(int content)
+t_stack	*lst_new(int content)
 {
-	STACK	*stack;
+	t_stack	*stack;
 
-	stack = malloc(sizeof(STACK));
+	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
 	stack->content = content;
@@ -52,7 +52,7 @@ STACK	*lst_new(int content)
 	return (stack);
 }
 
-STACK	*lst_last(STACK *stack)
+t_stack	*lst_last(t_stack *stack)
 {
 	if (!stack)
 		return (NULL);
