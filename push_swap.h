@@ -26,7 +26,7 @@ void				reset_index(STACK **stack);
 void				rotate_to_min(STACK **stack, int size);
 
 // INDEX_C
-void				ps_index(STACK **stack);
+void	index_all_elements_by_content(STACK **stack);
 
 // RADIX_C
 int					lst_size(STACK *lst);

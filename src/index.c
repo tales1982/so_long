@@ -1,7 +1,7 @@
 
 #include "../push_swap.h"
 
-static STACK	*ps_get_min(STACK **stack)
+static STACK	*find_next_unindexed_min(STACK **stack)
 {
 	STACK	*lst;
 	STACK	*lst_min;
@@ -23,17 +23,16 @@ static STACK	*ps_get_min(STACK **stack)
 	}
 	return (lst_min);
 }
-
-void	ps_index(STACK **stack)
+void	index_all_elements_by_content(STACK **stack)
 {
 	STACK	*lst;
 	int		index;
 
 	index = 0;
-	lst = ps_get_min(stack);
+	lst =  find_next_unindexed_min(stack);
 	while (lst)
 	{
 		lst->index = index++;
-		lst = ps_get_min(stack);
+		lst = find_next_unindexed_min(stack);
 	}
 }

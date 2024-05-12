@@ -75,7 +75,7 @@ int	main(int ac, char **av)
 	// printf("Pilha A antes da ordenação:\n");
 	// print_stack(a_stack);
 	// Indexa e ordena se necessário
-	ps_index(&a_stack);
+	index_all_elements_by_content(&a_stack);
 	if (is_sorted(&a_stack) != 1)
 	{
 		if (lst_size(a_stack) <= 5)
