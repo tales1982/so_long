@@ -22,7 +22,7 @@ OBJS		= $(SRC:.c=.o)
 # Compiler options
 CC			= cc
 RM			= rm -f
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 
 # Implicit rule for compiling .c to .o
 %.o : %.c
@@ -34,6 +34,10 @@ $(NAME): $(OBJS)
 
 # Default rule
 all: $(NAME)
+
+# Roda o valgrind
+check:
+	@valgrind --leak-check=full ./$(NAME)
 
 # Rule for cleaning up
 fclean:
