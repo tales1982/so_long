@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/13 17:33:13 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/05/13 17:33:34 by tlima-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -5,6 +17,7 @@
 # include <stddef.h> // Para o tipo size_t
 # include <stdlib.h>
 # include <unistd.h>
+
 typedef struct s_lst
 {
 	int				content;
