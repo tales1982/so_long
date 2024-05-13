@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:33:13 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/05/13 17:33:34 by tlima-de         ###   ########.fr       */
+/*   Updated: 2024/05/13 23:07:53 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
 
 # include <limits.h> // para limts
 # include <stddef.h> // Para o tipo size_t
