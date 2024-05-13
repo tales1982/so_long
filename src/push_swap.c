@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:55:30 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/05/13 17:56:07 by tlima-de         ###   ########.fr       */
+/*   Updated: 2024/05/13 22:34:07 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,32 +40,36 @@ static void	ps_stackclear(t_stack **stack)
 	free(*stack);
 	*stack = NULL;
 }
-
-static int	ps_initstack(int ac, char **av, t_stack **a_stack)
+static int ps_initstack(int ac, char **av, t_stack **a_stack)
 {
 	int		i;
 	int		j;
 	char	**split;
+	long	num;
 
 	i = 1;
 	while (i < ac)
 	{
-		j = 0;
-		split = ft_split(av[i], ' ');
-		if (!split[j])
+		split = ft_split(av[i++], ' ');
+		if (!split)
 			return (0);
+		j = 0;
 		while (split[j])
 		{
-			if (ft_atol(split[j]) > INT_MAX || ft_atol(split[j]) < INT_MIN)
+			num = ft_atol(split[j]);
+			if (num > INT_MAX || num < INT_MIN)
+			{
+				free_split(split);
 				return (0);
-			lst_addback(a_stack, lst_new(ft_atoi(split[j])));
+			}
+			lst_addback(a_stack, lst_new((int)num));
 			j++;
 		}
 		free_split(split);
-		i++;
 	}
 	return (1);
 }
+
 
 int	main(int ac, char **av)
 {
