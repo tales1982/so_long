@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/13 18:37:02 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/05/13 18:37:07 by tlima-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
@@ -38,12 +48,13 @@ static char	*word_dup(const char *str, int start, int finish)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t i;
-	size_t j;
-	int index;
-	char **split;
+	size_t	i;
+	size_t	j;
+	int		index;
+	char	**split;
 
-	if (!s || !(split = malloc((count_words(s, c) + 1) * sizeof(char *))))
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !split)
 		return (0);
 	i = 0;
 	j = 0;
@@ -62,12 +73,3 @@ char	**ft_split(char const *s, char c)
 	split[j] = 0;
 	return (split);
 }
-
-/*
-Usa count_words para determinar quantos elementos (palavras) serão no array resultante e 
-aloca memória suficiente para essas palavras mais um elemento nulo para marcar o fim do array.
-Percorre a string s e usa a variável index para marcar onde uma palavra começa. 
-Quando encontra um delimitador ou chega ao fim da string, usa word_dup para copiar a palavra para o array split.
-Finaliza o array com um ponteiro nulo.
-
-*/

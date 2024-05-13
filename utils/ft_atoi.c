@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/13 18:34:57 by tlima-de          #+#    #+#             */
+/*   Updated: 2024/05/13 18:35:04 by tlima-de         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../push_swap.h"
 
@@ -26,6 +36,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * neg);
 }
-/*
-A função atoi (ASCII to Integer). Esta função converte uma string numérica em um valor inteiro. 
-*/
