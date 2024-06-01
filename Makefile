@@ -1,59 +1,78 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: tlima-de <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/13 17:34:59 by tlima-de          #+#    #+#              #
-#    Updated: 2024/05/13 17:35:02 by tlima-de         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# Paths and libraries
+LIBFT_PATH       = ./lib/libft
+LIBFT            = $(LIBFT_PATH)/libft.a
 
-NAME	= push_swap
-SRC = src/index.c \
-      src/push_swap.c \
-      src/push.c \
-      src/radix.c \
-      src/reverse.c \
-      src/rotate.c \
-      src/swap.c \
-      src/stack_operations.c \
-      src/simple_sort_utils.c \
-      utils/lst_utils.c \
-      utils/ft_atoi.c \
-      utils/ft_atol.c \
-      utils/ft_split.c \
-      utils/ft_putstr_fd.c \
-      utils/free_split.c \
-      utils/ft_strlen.c \
+MINILIBX_PATH    = ./lib/minilibx-linux
+MINILIBX         = $(MINILIBX_PATH)/libmlx.a
 
+SOURCES_FILES    = so_long.c \
+					src/close_window.c \
+					src/draw_map.c \
+					src/draw_exit.c \
+					src/key_event.c \
+					src/load_map.c \
+					src/start_game.c \
+					src/copy_image_part.c \
+					src/key_event_player.c \
 
-OBJS		= $(SRC:.c=.o)
+OBJS             = $(SOURCES_FILES:.c=.o)
 
 # Compiler options
-CC			= cc
-RM			= rm -f
-CFLAGS		= -Wall -Wextra -Werror -g
+CC               = cc
+RM               = rm -f
+CFLAGS           = -Wall -Wextra -Werror -g -I $(LIBFT_PATH) -I $(MINILIBX_PATH)
+
+# Executable name
+NAME             = so_long
+
+# Map file
+MAP_FILE         = maps/map.ber
 
 # Implicit rule for compiling .c to .o
 %.o : %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
-	
+
 # Rule to link the executable
 $(NAME): $(OBJS)
-	@$(CC) $(OBJS) -o $(NAME)
+	@if [ ! -d $(LIBFT_PATH) ]; then \
+		echo "Directory $(LIBFT_PATH) does not exist."; \
+		exit 1; \
+	fi
+	@if [ ! -d $(MINILIBX_PATH) ]; then \
+		echo "Directory $(MINILIBX_PATH) does not exist."; \
+		exit 1; \
+	fi
+	@$(MAKE) -C $(LIBFT_PATH)
+	@$(MAKE) -C $(MINILIBX_PATH)
+	@$(CC) $(OBJS) $(LIBFT) $(MINILIBX) -o $(NAME) -L$(MINILIBX_PATH) -lmlx -lXext -lX11 -lm
+	@echo "Executable $(NAME) created successfully."
 
 # Default rule
 all: $(NAME)
 
 # Roda o valgrind
-check:
-	@valgrind --leak-check=full ./$(NAME)
+check: $(NAME)
+	@valgrind --leak-check=full ./$(NAME) $(MAP_FILE)
 
 # Rule for cleaning up
 fclean:
+	@if [ ! -d $(LIBFT_PATH) ]; then \
+		echo "Directory $(LIBFT_PATH) does not exist."; \
+	else \
+		$(MAKE) -C $(LIBFT_PATH) fclean; \
+	fi
+	@if [ ! -d $(MINILIBX_PATH) ]; then \
+		echo "Directory $(MINILIBX_PATH) does not exist."; \
+	else \
+		$(MAKE) -C $(MINILIBX_PATH) clean; \
+	fi
 	@$(RM) $(NAME) $(OBJS)
+	@echo "Clean completed."
 
 # Rule to re-make everything
 re: fclean all
+
+# Clean up object files only
+clean:
+	@$(RM) $(OBJS)
+	@echo "Object files cleaned."
