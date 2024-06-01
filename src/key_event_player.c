@@ -6,10 +6,9 @@
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:14:00 by tales             #+#    #+#             */
-/*   Updated: 2024/06/01 18:54:41 by tales            ###   ########.fr       */
+/*   Updated: 2024/06/01 19:28:23 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../so_long.h"
 
@@ -39,6 +38,6 @@ void check_victory(t_data *data, int new_x, int new_y)
         ft_printf("You win!\n");
         mlx_string_put(data->mlx, data->win, data->map_width * TILE_SIZE / 2 - 50,
                        data->map_height * TILE_SIZE / 2, 0xFFFFFF, "You win!");
-        exit(0);
+        mlx_loop_end(data->mlx); // Para encerrar o loop do jogo
     }
 }

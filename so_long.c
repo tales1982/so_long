@@ -6,37 +6,37 @@
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 09:46:13 by tales             #+#    #+#             */
-/*   Updated: 2024/06/01 18:31:54 by tales            ###   ########.fr       */
+/*   Updated: 2024/06/01 19:19:29 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	initialize_game_window(t_data *data)
+void initialize_game_window(t_data *data)
 {
-	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, data->map_width * TILE_SIZE,
-			data->map_height * TILE_SIZE, "So Long");
+    data->mlx = mlx_init();
+    data->win = mlx_new_window(data->mlx, data->map_width * TILE_SIZE,
+            data->map_height * TILE_SIZE, "So Long");
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_data	data;
+    t_data data;
 
-	if (argc != 2)
-	{
-		printf("Usage: %s <map.ber>\n", argv[0]);
-		return (1);
-	}
-	data.map = load_map(argv[1], &data.map_width, &data.map_height);
-	if (!data.map)
-	{
-		printf("Error loading map\n");
-		return (1);
-	}
-	data.move_count = 0; // Inicializar move_count a zero
-	start_game(&data);
-	return (0);
+    if (argc != 2)
+    {
+        printf("Usage: %s <map.ber>\n", argv[0]);
+        return (1);
+    }
+    data.map = load_map(argv[1], &data.map_width, &data.map_height, &data);
+    if (!data.map)
+    {
+        printf("Error loading map\n");
+        return (1);
+    }
+	 data.move_count = 0; // Inicializa o contador de movimentos
+    start_game(&data);
+    return (0);
 }
 
 /*

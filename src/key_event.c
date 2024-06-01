@@ -6,12 +6,11 @@
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 18:22:32 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/06/01 18:54:37 by tales            ###   ########.fr       */
+/*   Updated: 2024/06/01 19:02:36 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
 
 int is_wall(int x, int y, t_data *data)
 {
@@ -75,7 +74,6 @@ int key_event(int keycode, t_data *data)
     }
     return (0);
 }
-
 /*
 ° is_wall: Verifica se uma posição no mapa é uma parede.
 ° update_position_and_image: Atualiza a posição e a imagem do jogador com base na tecla pressionada.
