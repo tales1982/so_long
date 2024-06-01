@@ -6,7 +6,7 @@
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 09:47:24 by tales             #+#    #+#             */
-/*   Updated: 2024/06/01 19:09:05 by tales            ###   ########.fr       */
+/*   Updated: 2024/06/01 19:44:08 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,6 @@ int			key_event(int keycode, t_data *data);
 // Funções auxiliares
 void		draw_exit(t_data *data);
 void		copy_image_part(t_image_data *data);
+void		free_resources(t_data *data);
 
 #endif

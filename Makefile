@@ -14,6 +14,7 @@ SOURCES_FILES    = so_long.c \
 					src/start_game.c \
 					src/copy_image_part.c \
 					src/key_event_player.c \
+					src/free_resources.c \
 
 OBJS             = $(SOURCES_FILES:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 09:46:13 by tales             #+#    #+#             */
-/*   Updated: 2024/06/01 19:19:29 by tales            ###   ########.fr       */
+/*   Updated: 2024/06/01 19:45:21 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int main(int argc, char **argv)
     }
 	 data.move_count = 0; // Inicializa o contador de movimentos
     start_game(&data);
+     free_resources(&data); // Libera os recursos alocados
     return (0);
 }
 

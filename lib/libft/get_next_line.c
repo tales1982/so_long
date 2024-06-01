@@ -6,7 +6,7 @@
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:53:54 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/06/01 19:25:58 by tales            ###   ########.fr       */
+/*   Updated: 2024/06/01 19:46:07 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ static char *ft_read(int int_fd, char *full_line)
             return (NULL);
         }
         buffer[nbr_bytes_read] = '\0';
+        char *temp = full_line;
         full_line = ft_strjoin(full_line, buffer);
+        free(temp);
         if (ft_strchr(full_line, '\n'))
             break;
     }

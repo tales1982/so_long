@@ -6,7 +6,7 @@
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 18:22:40 by tlima-de          #+#    #+#             */
-/*   Updated: 2024/06/01 19:27:26 by tales            ###   ########.fr       */
+/*   Updated: 2024/06/01 19:39:42 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ int **initialize_map(int width __attribute__((unused)), int initial_height)
     map = malloc(sizeof(int *) * initial_height);
     if (!map)
         return (NULL);
-    for (int i = 0; i < initial_height; i++)
+    int i = 0;
+    while (i < initial_height)
+    {
         map[i] = NULL;
+        i++;
+    }
     return (map);
 }
 
@@ -84,9 +88,6 @@ int **load_map(const char *filename, int *width, int *height, t_data *data)
     close(fd);
     return (map);
 }
-
-
-
 /*
 ° parse_line_to_map: Converte uma linha do arquivo de mapa em uma linha de inteiros (1 para parede,
 	0 para chão).
