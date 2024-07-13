@@ -3,6 +3,7 @@
         "limits.h": "c",
         "push_swap.h": "c",
         "chrono": "c",
-        "variant": "c"
+        "variant": "c",
+        "so_long.h": "c"
     }
 }

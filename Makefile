@@ -15,6 +15,10 @@ SOURCES_FILES    = so_long.c \
 					src/copy_image_part.c \
 					src/key_event_player.c \
 					src/free_resources.c \
+					vld_map/game_logic.c \
+					vld_map/map_validation.c \
+					vld_map/queue.c \
+
 
 OBJS             = $(SOURCES_FILES:.c=.o)
 

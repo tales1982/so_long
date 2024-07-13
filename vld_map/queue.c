@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_map.c                                         :+:      :+:    :+:   */
+/*   queue.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/13 16:07:52 by tales             #+#    #+#             */
-/*   Updated: 2024/07/13 16:12:53 by tales            ###   ########.fr       */
+/*   Created: 2024/07/13 16:19:24 by tales             #+#    #+#             */
+/*   Updated: 2024/07/13 16:42:53 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../so_long.h"
 
-// Funções da fila
 t_queue *create_queue(void)
 {
     t_queue *queue = (t_queue *)malloc(sizeof(t_queue));
@@ -53,33 +51,14 @@ t_point dequeue(t_queue *queue)
     return point;
 }
 
+int is_empty(t_queue *queue)
+{
+    return (queue->front == NULL);
+}
 
 void free_queue(t_queue *queue)
 {
     while (!is_empty(queue))
         dequeue(queue);
     free(queue);
-}
-
-
-
-void enable_last_item(char **map, int width, int height)
-{
-    int x = 0;
-    int y = 0;
-
-    while (y < height)
-    {
-        x = 0;
-        while (x < width)
-        {
-            if (map[y][x] == 'L')  // 'L' representa o último item bloqueado
-            {
-                map[y][x] = 'E';  // 'E' representa o último item habilitado (ex: porta de saída)
-                return;
-            }
-            x++;
-        }
-        y++;
-    }
 }
