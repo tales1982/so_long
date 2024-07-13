@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlima-de <tlima-de@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 09:47:24 by tales             #+#    #+#             */
-/*   Updated: 2024/06/11 18:21:10 by tlima-de         ###   ########.fr       */
+/*   Updated: 2024/07/13 17:52:54 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,11 @@ void		free_mlx_resources(t_data *data);
 void		free_player_images(t_data *data);
 void		free_images(t_data *data);
 void		free_map(t_data *data);
+
+//validation
+int is_valid_position(char **map, int x, int y, int rows, int cols);
+void mark_visited(char **map, int x, int y, int rows, int cols, int *collected_items);
+int check_items_accessible(char **map, int rows, int cols);
+int validate_map(char **map, int rows, int cols);
 
 #endif
