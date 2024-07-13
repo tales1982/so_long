@@ -6,7 +6,7 @@
 /*   By: tales <tales@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 09:47:24 by tales             #+#    #+#             */
-/*   Updated: 2024/06/01 19:44:08 by tales            ###   ########.fr       */
+/*   Updated: 2024/07/13 16:14:19 by tales            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,24 @@ typedef struct s_image_data
 	int		dest_endian;
 }			t_image_data;
 
+typedef struct s_point
+{
+    int x;
+    int y;
+}               t_point;
+
+typedef struct s_node
+{
+    t_point         point;
+    struct s_node   *next;
+}               t_node;
+
+typedef struct s_queue
+{
+    t_node  *front;
+    t_node  *rear;
+}    ;
+
 // Inicialização
 int			close_window(void *param);
 void		initialize_game_window(t_data *data);
@@ -107,5 +125,27 @@ int			key_event(int keycode, t_data *data);
 void		draw_exit(t_data *data);
 void		copy_image_part(t_image_data *data);
 void		free_resources(t_data *data);
+
+//validacao do mapas
+// Funções da fila
+t_queue *create_queue(void);
+void    enqueue(t_queue *queue, int x, int y);
+t_point dequeue(t_queue *queue);
+int     is_empty(t_queue *queue);
+void    free_queue(t_queue *queue);
+
+// Funções auxiliares
+int     is_valid(int x, int y, int width, int height);
+int     total_collectibles(char **map, int width, int height);
+void    enable_last_item(char **map, int width, int height);
+void    error_exit(const char *message);
+
+// Funções principais
+int is_accessible(char **map, int start_x, int start_y, int width, int height);
+int bfs(t_queue *queue, char **map, int visited[][height], int width, int height);
+void check_and_enqueue(t_queue *queue, int x, int y, char **map, int visited[][height], int width, int height);
+int check_victory_condition(char **map, int width, int height);
+int count_collectibles_in_row(char *row, int width);
+void validate_map(char **map, int width, int height);
 
 #endif
